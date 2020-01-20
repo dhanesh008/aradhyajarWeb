@@ -1,0 +1,422 @@
+body {
+  margin:10px 10px 10px 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:  #e8e0da;
+}
+ /* Bordered form */
+form {
+  border: 2px solid #e0d3c9;
+  width: 95%;
+  border-radius: 5px;
+  margin: 10px 10px 10px 10px;
+}
+
+/* Full-width inputs */
+input[type=text],input[type=number], input[type=password] ,select, textarea{
+  width: 100%;
+  padding: 8px 15px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+/* Set a style for all buttons */
+button {
+  background-color:#6699FF;
+  color: white;
+  padding: 8px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 3px;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+.clsbtnop{
+width: auto;
+margin: 3px 3px 3px 3px;
+color: black;
+background-color: #e0d3c9;
+padding: 8px;
+}
+
+.clsbtn {
+  
+  font-size: 1em;
+  padding: 5px 12px;
+  margin: 5px 5px 5px 5px ;
+}
+
+.clsicon{
+  margin-right: 8px;
+  margin-left: 8px; 
+}
+
+/***********Top nav***********/
+.title{
+  font-size: 45px;
+color:#fdf9f9;
+margin-left: 12%;
+width:max-content;
+margin-top: 3%
+}
+.topnav {
+  overflow: hidden;
+  heigt:70px;
+  background-color: #3b4bc6;
+  border-bottom:20px solid #111c72;
+}
+
+.topnav a {
+  float: left;
+  margin-left: 8px;
+  margin-right: 8px;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: #111c72;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #111c72;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+/*********end top nav ************/
+/***************sidebar navibar Menu***********/
+.vertical-menu {
+  width: 100%; /* Set a width if you like */
+  
+  margin: 10px 10px 10px 10px;
+}
+
+.vertical-menu a {
+  background-color: white; /*  background color */
+  color: black; /*  text color */
+  display: block; /* Make the links appear below each other */
+  padding: 7px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+   border: 8px solid #e8e0da;
+}
+.vertical-menu a:hover {
+  background-color: black;
+  color: white; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color:  #ff6e00; /* Add  color to the "active/current" link */
+  color: white;
+}
+/***********End of sidebar navibar************/
+/******************Table**************/
+.clsTable{
+  
+}
+.clsTable table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+ 
+  float: left;
+  border-spacing: 0;
+  margin: 5px 5px 5px  5px;
+}
+.clsTable td, .clsTable th {
+  border: 1px solid #ddd;
+  padding: 3px;
+  white-space:nowrap;
+}
+
+.clsTable tr:nth-child(even){background-color: white;}
+.clsTable tr:nth-child(odd){background-color: white;}
+
+.clsTable tr:hover {background-color: #ddd;}
+
+.clsTable th {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: left;
+  background-color: #6699FF;
+  color: white;
+}
+/*End table*/
+/**********Login class**********/
+.clsuser{
+  color: #3366CC;
+}
+.clspwforget{
+  background-color:#f1f1f1;
+  height: 30px;
+  padding:10px;
+}
+.container{
+  padding: 10px;
+}
+/********End of Login class******/
+/**********Home*************/
+.content{
+  padding: 10px;
+}
+
+.clscontent {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.page {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 10px 10px 10px;
+}
+   /*****sidebar box******/
+    .sidebar-content{
+      border-top:20px solid #111c72;
+      height:300px;
+      width: 100%;
+      background-color: #3b4bc6;
+      margin-top: 15px;
+      margin-right: 15px;
+    }
+    .sidebar-content p{
+       padding: 10px;
+       color: white; 
+    }
+    .sidebar .sidebar-header{
+      color: white;
+      text-align: center;
+      padding: 0.4rem 0.4rem;  
+      font-size: 30px;
+
+    }
+   /****end of sidebarbox**/
+/**********End home*************/
+/***icon inside in input**/
+.input-icons i { 
+  position: absolute; 
+} 
+
+.input-icons { 
+  width: auto; 
+  margin:20px 10px 10px 10px;
+} 
+
+.icon { 
+  padding: 20px; 
+  color: #6699FF; 
+  text-align: center; 
+} 
+
+.input-field { 
+  margin-top: 10px;
+  text-align: center; 
+  flex: 1;
+} 
+/****end of icon inside in input*****/
+/***********Footer*************/
+.clsfooter{
+  height: 50px;
+  width: 100%;
+  background-color:#3366CC;  
+  border-top:20px solid #111c72;
+}
+/**********End of footer******/
+/********Modal box*****/
+.clsModal{
+  padding: 10px;
+   
+  flex: 6;
+}
+.clsModal-content{
+  display: flex;
+  flex-direction: row;
+  
+}
+.clsmodal-footer{
+  margin: 5px 5px 5px 5px;
+  border-left:2px solid #e0d3c9;
+  flex: 1;
+
+}
+.clsmodal-header{
+background-color: #6699FF;
+color: white;
+border-top-left-radius: 3px;
+border-top-right-radius: 3px;
+padding: 0.5rem 0.5rem;
+}
+
+/******************Table**************/
+ table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  
+  float: left;
+  border-spacing: 0;
+  margin: 5px 5px 5px  5px;
+}
+ td, th {
+  border: 1px solid #ddd;
+  padding: 3px;
+  white-space:nowrap;
+}
+th {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: left;
+  background-color: #6699FF;
+  color: white;
+}
+tr:nth-child(even){background-color: white;}
+tr:nth-child(odd){background-color: #ddd;}
+
+
+.clsTable tr:nth-child(even){background-color: white;}
+.clsTable tr:nth-child(odd){background-color: white;}
+
+.clsTable tr:hover {background-color: #ddd;}
+
+.clsTable th {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: left;
+  background-color: #6699FF;
+  color: white;
+}
+
+
+/********end Modal Box*****/
+.user-info{
+  color: white;
+  font-size: 14px;
+  margin: 10px 10px 10px 10px;
+  padding: 10px;  
+}
+.clsFromContent{
+  border-left:2px solid #e0d3c9;
+  padding: 10px;
+}
+.clsForm{
+  padding: 10px;
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  /*******sidebar box*********/
+  .sidebar{
+  margin-top:10%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 10%;
+}
+/*****Login**********/
+.clslogin{
+  margin-left: 25%;
+  margin-right: 25%;
+}
+/***********home***/
+.clscontent {
+    width: 50%;
+}
+/*****vertical menu*******/
+.vertical-menu {
+  width: 25%;
+  float: left;
+}
+/*****footer********/
+.clsfooter{
+  display: flex;
+  flex: wrap;
+}
+/***********/
+.clsForm{
+  display: flex;
+  flex: wrap;
+  padding: 15px;
+}
+.clsFromContent{
+  width: 100%;
+}
+/*******modal*******/
+.clsModal{
+  display: flex;
+ 
+  flex-wrap: wrap;
+  
+}
+.clsform-group{
+  margin-right: 5px;
+
+}
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  /********sidebar************/
+.sidebar{
+  margin-top:10%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 10%;
+}/******login*********/
+
+
+  /*******vertical menu*********/
+.vertical-menu {
+    width: 30%;
+    float: left;
+  }
+  /********home*******/
+  .clscontent {
+    width: 50%;
+  }
+  /****************/
+.clsForm{
+  display: flex;
+  flex: wrap;
+  padding: 15px;
+
+}
+ .clsfooter{
+    display: flex;
+  flex: wrap;
+  }
+.clsFromContent{
+  width: 100%;
+}
+.clsform-group{
+  margin: 5px 5px 5px 5px;
+}
+.clsModal{
+  display: flex;
+  
+  flex-wrap: wrap;
+
+}
+
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 400px) {
+  .clsbtn {
+    width: 100%;
+  }
+   .clsfooter{
+    display: flex;
+  flex: wrap;
+  }
+}  
