@@ -9,6 +9,47 @@
  
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/DataTables/datatables.min.js"></script>
 </head>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 35%; /* Full width */
+  height: 25%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
 <body>
 
 <div class="topnav">
@@ -18,20 +59,15 @@
 <div class="clsForm">
       <div class="vertical-menu">
         <a href="${pageContext.request.contextPath}/panel/home"><i class="clsicon fa fa-home"></i>  Home</a>
-        <a href="${pageContext.request.contextPath}/panel/home"><i class="clsicon fa fa-money-bill-alt"></i>  Transaction</a>
-       <a href="${pageContext.request.contextPath}/panel/home"><i class="clsicon fa fa-receipt"></i>  Bill</a>
-        <a href="${pageContext.request.contextPath}/panel/home"><i class="clsicon fa fa-book-open"></i> Day report</a>
-        <a href="./stock.html"><i class="clsicon fa fa-cart-plus"></i>   Stock</a>
-        <a href="${pageContext.request.contextPath}/panel/home"><i class="clsicon fa fa-box"></i>  New Order</a>
-         <a href="${pageContext.request.contextPath}/panel/customer" ><i class="clsicon fa fa-user-plus"></i>  New Customer</a>
-         <a href="${pageContext.request.contextPath}/panel/area" class="active"><i class="clsicon fa fa-globe-asia"></i> New Area</a>
-       <a href="${pageContext.request.contextPath}/panel/home"><i class="clsicon fa fa-chart-line"></i>   Report</a>
+         <a href="${pageContext.request.contextPath}/panel/customer" ><i class="clsicon fa fa-user-plus"></i>Customer</a>
+         <a href="${pageContext.request.contextPath}/panel/area" class="active" ><i class="clsicon fa fa-globe-asia"></i> New Area</a>
+      
       </div> 
   <div class="clsFromContent">
    		
    
    	<div class="clsmodal-header">
-        <i class="clsicon fa fa-globe-asia"></i><span>Area <span>
+        <i class="clsicon fa fa-globe-asia"></i><span>Add New Area <span>
       </div>
         <div class="clsModal-content">
         		  <div class="clsModal" style="border: 2px solid grey;">
@@ -54,9 +90,12 @@
         		  </div>
         		  
         </div>
+         	<div class="clsmodal-header">
+        <i class="clsicon fa fa-globe-asia"></i><span>List Of Area <span>
+      </div>
      <div class="clsModal-content">
         		  <div class="clsModal" style="border: 2px solid grey;">
-        		  	<table style="float:center;" id="areatable" width="153%">
+        		  	<table style="float:center;" id="areatable" width="99%">
   <thead class="clsTable">
   <tr>
     <th>Sr No.</th>
@@ -78,14 +117,19 @@
    
   </div>
 </div>
-<div>
-  <div class="clsfooter">
-  
-  </div>
-</div>
+
 
 
 </body>
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/area.js"></script>
 <script>
 var contextPath="${pageContext.request.contextPath}";

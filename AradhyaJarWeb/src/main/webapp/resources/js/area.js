@@ -1,7 +1,7 @@
+
+
 $(window).on('load', function() {
-	
 	loadtablewithdata();
-	
 });
 function addnewArea()
 {
@@ -67,24 +67,21 @@ function loadtablewithdata()
                     "<td>" + b.areaJarRate + "</td>" +
                     "<td>" + b.areaBotRate + "</td>" +
                     "<td>" + b.areaStatus + "</td>" +
-                    " <td><button type='button' class='clsbtnop'><i class='fa fa-edit'></i></button><button type='button' class='clsbtnop'><i class='fa fa-trash'></i></button></td>" +
+                    " <td><button type='button' onclick='openPopup()'class='clsbtnop'><i class='fa fa-edit'></i></button></td>" +
                     "</tr>");
                 i++;
             });
+            
  
-            $('#areatable').DataTable(
-             	    {
-                 	 
-         searching:false,
-         destory:false,
-         "lengthChange": false,
-         "pageLength": 5,
-         "autoWidth": true
-                 	    });	
+            
         }
     });
 	
     
 	}
 
-	
+	function openPopup()
+	{
+		var modal = document.getElementById("myModal");
+		modal.style.display = "block";
+	}
