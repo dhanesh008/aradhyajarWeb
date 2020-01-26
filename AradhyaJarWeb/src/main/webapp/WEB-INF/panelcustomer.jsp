@@ -17,8 +17,12 @@
 <div class="clsForm">
       <div class="vertical-menu">
         <a href="${pageContext.request.contextPath}/panel/home"><i class="clsicon fa fa-home"></i>  Home</a>
+         <a href="${pageContext.request.contextPath}/panel/transaction"><i class="clsicon fa fa-tags"></i> Transaction</a>
+         <a href="${pageContext.request.contextPath}/panel/daybook"><i class="clsicon fa fa-book-open"></i> Daybook</a>
+          <a href="${pageContext.request.contextPath}/panel/print"><i class="clsicon fa fa-box"></i> Print</a>
+         <a href="${pageContext.request.contextPath}/panel/order"><i class="clsicon fa fa-box"></i> Order</a>
          <a href="${pageContext.request.contextPath}/panel/customer" class="active"><i class="clsicon fa fa-user-plus"></i>Customer</a>
-         <a href="${pageContext.request.contextPath}/panel/area" ><i class="clsicon fa fa-globe-asia"></i> New Area</a>
+         <a href="${pageContext.request.contextPath}/panel/area" ><i class="clsicon fa fa-globe-asia"></i> Area</a>
       
       </div> 
   <div class="clsFromContent">

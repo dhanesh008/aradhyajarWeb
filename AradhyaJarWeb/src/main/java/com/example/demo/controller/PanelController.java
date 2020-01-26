@@ -50,7 +50,45 @@ public class PanelController
 		{
 			 return "panelcustomer";
 		}
-		
-       
     }
+	
+	@RequestMapping(value = "/panel/transaction")
+    public String transaction(HttpSession session)
+	{
+		if(session.getAttribute("user")==null)
+				{
+			 		return "redirect:/login";
+				}
+		else
+		{
+			 return "panelTransaction";
+		} 
+    }
+	
+	@RequestMapping(value = "/panel/order")
+    public String order(HttpSession session)
+	{
+		if(session.getAttribute("user")==null)
+				{
+			 		return "redirect:/login";
+				}
+		else
+		{
+			 return "panelorder";
+		} 
+    }
+	@RequestMapping(value = "/panel/daybook")
+    public String daybook(HttpSession session)
+	{
+		if(session.getAttribute("user")==null)
+				{
+			 		return "redirect:/login";
+				}
+		else
+		{
+			 return "paneldaybook";
+		} 
+    }
+	
+	
 }
