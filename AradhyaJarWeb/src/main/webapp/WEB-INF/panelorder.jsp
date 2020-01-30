@@ -19,7 +19,8 @@
         <a href="${pageContext.request.contextPath}/panel/home"><i class="clsicon fa fa-home"></i>  Home</a>
          <a href="${pageContext.request.contextPath}/panel/transaction"><i class="clsicon fa fa-tags"></i> Transaction</a>
           <a href="${pageContext.request.contextPath}/panel/daybook" ><i class="clsicon fa fa-book-open"></i> Daybook</a>
-           <a href="${pageContext.request.contextPath}/panel/print"><i class="clsicon fa fa-box"></i> Print</a>
+           <a href="${pageContext.request.contextPath}/panel/print"><i class="clsicon fa fa-box"></i>  Print Bill</a>
+           <a href="${pageContext.request.contextPath}/panel/report"><i class="clsicon fa fa-chart-line"></i>Area Wise Report</a>
          <a href="${pageContext.request.contextPath}/panel/order" class="active"><i class="clsicon fa fa-box"></i> Order</a>
          <a href="${pageContext.request.contextPath}/panel/customer" ><i class="clsicon fa fa-user-plus"></i>Customer</a>
          <a href="${pageContext.request.contextPath}/panel/area" ><i class="clsicon fa fa-globe-asia"></i> Area</a>
@@ -53,7 +54,7 @@
       </div>
          <div class="clsform-group"  style="width:15%;">
         <label><b>Date</b></label>
-        <input type="text" id="mob1" placeholder="Mobile"  required>
+        <input type="text" id="date" placeholder="Mobile"  required>
       </div>
       <div class="clsform-group" style="width:15%;">
         <label><b>Time</b></label>

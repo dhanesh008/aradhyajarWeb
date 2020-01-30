@@ -2,6 +2,7 @@ $(window).on('load', function()
 		{
 	
 	loadtablewithdata();
+	
  
     $.ajax({
         type: "GET",
@@ -53,7 +54,9 @@ function loadtablewithdata()
         }
     });
     
-    
+    $("#areatable").DataTable({
+    	searching:false,
+    	 "lengthChange": false});
     
 	}
 

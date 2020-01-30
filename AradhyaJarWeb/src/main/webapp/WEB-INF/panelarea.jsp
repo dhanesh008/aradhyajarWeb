@@ -8,48 +8,11 @@
    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/DataTables/datatables.min.css"/>
  
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/DataTables/datatables.min.js"></script>
+<!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 </head>
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 35%; /* Full width */
-  height: 25%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-</style>
 <body>
 
 <div class="topnav">
@@ -61,7 +24,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <a href="${pageContext.request.contextPath}/panel/home"><i class="clsicon fa fa-home"></i>  Home</a>
          <a href="${pageContext.request.contextPath}/panel/transaction"><i class="clsicon fa fa-tags"></i> Transaction</a>
           <a href="${pageContext.request.contextPath}/panel/daybook" ><i class="clsicon fa fa-book-open"></i> Daybook</a>
-           <a href="${pageContext.request.contextPath}/panel/print"><i class="clsicon fa fa-box"></i> Print</a>
+           <a href="${pageContext.request.contextPath}/panel/print"><i class="clsicon fa fa-box"></i>  Print Bill</a>
+           <a href="${pageContext.request.contextPath}/panel/report"><i class="clsicon fa fa-chart-line"></i>Area Wise Report</a>
          <a href="${pageContext.request.contextPath}/panel/order"><i class="clsicon fa fa-box"></i> Order</a>
          <a href="${pageContext.request.contextPath}/panel/customer" ><i class="clsicon fa fa-user-plus"></i>Customer</a>
          <a href="${pageContext.request.contextPath}/panel/area" class="active" ><i class="clsicon fa fa-globe-asia"></i>Area</a>
@@ -69,7 +33,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
       </div> 
   <div class="clsFromContent">
    		
-   
+  
    	<div class="clsmodal-header">
         <i class="clsicon fa fa-globe-asia"></i><span>Add New Area <span>
       </div>
@@ -125,14 +89,31 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 
 </body>
-<div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
-
+<div id="modalEdit" class="modal">
+  <p>Edit Area Details</p>
+  <table style="float:center;" id="jartable" width="99%">
+  <thead class="clsTable">
+  <tr>
+    
+    <th>Area Name</th>
+    <th>Jar rate</th>
+    <th>Bottel Rate</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    
+    <td>Dhaneshkumar rameshlal Solanki</td>
+    <td>Jar rate</td>
+    <td>Bottel Rate</td>
+  </tr> 
+  </tbody>
+ 
+</table> 
+  <button type="submit" onclick="addnewArea()" style="width:40%" class="clsbtn">Save</button>
+  <button type="submit" onclick="addnewArea()" style="width:40%" class="clsbtn">Close</button>
+</div>
 </div>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/area.js"></script>
 <script>

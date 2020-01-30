@@ -20,7 +20,8 @@
         <a href="${pageContext.request.contextPath}/panel/home" class="active"><i class="clsicon fa fa-home"></i>  Home</a>
         <a href="${pageContext.request.contextPath}/panel/transaction"><i class="clsicon fa fa-tags"></i> Transaction</a>
         <a href="${pageContext.request.contextPath}/panel/daybook"><i class="clsicon fa fa-book-open"></i> Daybook</a>
-         <a href="${pageContext.request.contextPath}/panel/print"><i class="clsicon fa fa-box"></i> Print</a>
+         <a href="${pageContext.request.contextPath}/panel/print"><i class="clsicon fa fa-box"></i>  Print Bill</a>
+             <a href="${pageContext.request.contextPath}/panel/report"><i class="clsicon fa fa-chart-line"></i>Area Wise Report</a>
         <a href="${pageContext.request.contextPath}/panel/order"><i class="clsicon fa fa-box"></i> Order</a>
         <a href="${pageContext.request.contextPath}/panel/customer"><i class="clsicon fa fa-user-plus"></i>Customer</a>
         <a href="${pageContext.request.contextPath}/panel/area" ><i class="clsicon fa fa-globe-asia"></i>Area</a>
@@ -123,6 +124,7 @@
 
 
 </body>
+
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/area.js"></script>
 <script>
 var contextPath="${pageContext.request.contextPath}";

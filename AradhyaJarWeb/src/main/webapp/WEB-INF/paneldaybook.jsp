@@ -20,6 +20,8 @@
         <a href="${pageContext.request.contextPath}/panel/home" ><i class="clsicon fa fa-home"></i>  Home</a>
         <a href="${pageContext.request.contextPath}/panel/transaction"><i class="clsicon fa fa-tags"></i> Transaction</a>
         <a href="${pageContext.request.contextPath}/panel/daybook" class="active"><i class="clsicon fa fa-book-open"></i> Daybook</a>
+         <a href="${pageContext.request.contextPath}/panel/print"><i class="clsicon fa fa-box"></i> Print Bill</a>
+         <a href="${pageContext.request.contextPath}/panel/report"><i class="clsicon fa fa-chart-line"></i>Area Wise Report</a>
         <a href="${pageContext.request.contextPath}/panel/order"><i class="clsicon fa fa-box"></i> Order</a>
         <a href="${pageContext.request.contextPath}/panel/customer"><i class="clsicon fa fa-user-plus"></i>Customer</a>
         <a href="${pageContext.request.contextPath}/panel/area" ><i class="clsicon fa fa-globe-asia"></i>Area</a>
@@ -27,7 +29,7 @@
   <div class="clsFromContent">
    		
    
-   	<div class="clsmodal-header" style="margin-top: 2px; width:30%">
+   	<div class="clsmodal-header" style="margin-top: 2px">
         <i class="clsicon fa fa-home"></i><span>Day Count<span>
       </div>
         <div class="clsModal-content">
@@ -63,7 +65,7 @@
         		  </div>
         		  
         </div>
-         	<div class="clsmodal-header"  style="margin-top: 2px; width:30%">
+         	<div class="clsmodal-header"  style="margin-top: 2px;">
         <i class="clsicon fa fa-globe-asia"></i><span>Day Transaction List <span>
       </div>
      <div class="clsModal-content"">
@@ -71,13 +73,22 @@
         		  	<table style="float:center;" id="ordertable" width="99%">
   <thead class="clsTable">
   <tr>
-    <th>Sr No.</th>
+    <th rowspan="2">Sr No.</th>
     
-    <th>Customer Name</th>
-    <th>Address</th>
-      <th>Mobile</th>
-        <th>Type</th>
-    <th>Jar</th>
+    <th rowspan="2">Customer Name</th>
+    <th rowspan="2">Address</th>
+      <th rowspan="2">Mobile</th>
+        <th rowspan="2">Type</th>
+    <th colspan="2">PickUp</th>
+    <th colspan="2">Delivery</th>
+    <th>Payment</th>
+    
+  </tr>
+  <tr>
+   
+    <th >Jar</th>
+    <th>Bottel</th>
+    <th >Jar</th>
     <th>Bottel</th>
     <th>Payment</th>
     
@@ -91,6 +102,7 @@
     <td>7770088860<br>8793612671</td>
     <td>Delivery</td>
       <td>40</td>
+    <td>50</td> <td>40</td>
     <td>50</td>
     <td>1000</td>
   
@@ -103,6 +115,8 @@
     <td>Pickup</td>
       <td>4</td>
     <td>0</td>
+     <td>40</td>
+    <td>50</td>
     <td>1000</td>
   
   </tr>
@@ -122,6 +136,9 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/area.js"></script>
 <script>
 var contextPath="${pageContext.request.contextPath}";
+
+
+
 </script>
 </html>
 

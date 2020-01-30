@@ -59,10 +59,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <div class="clsForm">
       <div class="vertical-menu">
         <a href="${pageContext.request.contextPath}/panel/home"><i class="clsicon fa fa-home"></i>  Home</a>
-         <a href="${pageContext.request.contextPath}/panel/transaction" class="active" ><i class="clsicon fa fa-tags"></i> Transaction</a>
+         <a href="${pageContext.request.contextPath}/panel/transaction"  ><i class="clsicon fa fa-tags"></i> Transaction</a>
           <a href="${pageContext.request.contextPath}/panel/daybook"><i class="clsicon fa fa-book-open"></i> Daybook</a> 
           <a href="${pageContext.request.contextPath}/panel/print"><i class="clsicon fa fa-box"></i>  Print Bill</a>
-          <a href="${pageContext.request.contextPath}/panel/report"><i class="clsicon fa fa-chart-line"></i>Area Wise Report</a>
+          <a href="${pageContext.request.contextPath}/panel/report" class="active"><i class="clsicon fa fa-chart-line"></i>Area Wise Report</a>
          <a href="${pageContext.request.contextPath}/panel/order"><i class="clsicon fa fa-box"></i> Order</a>
          <a href="${pageContext.request.contextPath}/panel/customer" ><i class="clsicon fa fa-user-plus"></i>Customer</a>
          <a href="${pageContext.request.contextPath}/panel/area"  ><i class="clsicon fa fa-globe-asia"></i> New Area</a>
@@ -73,7 +73,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
    		
    
    	<div class="clsmodal-header">
-        <i class="clsicon fa fa-tags"></i><span>Transaction  <span>
+        <i class="clsicon fa fa-tags"></i><span>Print Delivery Report  <span>
       </div>
         <div class="clsModal-content">
         		 
@@ -83,10 +83,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
           <option value="">Select Area</option>
           </select>
      				 </div>
-     				  <div class="clsform-group" style="width:45%;">
-         <input id="areaname" type="text" placeholder="Search Customer">
-      </div>
-     				 
      				 
         		  </div>
         		  
@@ -96,30 +92,43 @@ body {font-family: Arial, Helvetica, sans-serif;}
         		  <div class="clsModal" style="border: 2px solid grey;">
         		  	<table style="float:center;" id="areatable" width="99%">
   <thead class="clsTable">
-  <tr>
-    <th>Sr No.</th>
-    <th>Customer</th>
-    <th>Area</th>
-    <th>Address</th>
-    <th>Mobile</th>
-    <th>Jar</th>
-    <th>Bottel</th>
-    <th>Amount</th>
-     <th>Option</th>
+ <tr>
+    <th rowspan="2">Sr No.</th>
+    <th rowspan="2"> Name</th>
+    <th rowspan="2">Address</th>
+    
+    <th colspan="3">Pending</th>
+    <th colspan="2">PickUp</th>
+    <th colspan="2">Delivery</th>
+      <th rowspan="2">Payment</th>
+  
+  </tr>
+   <tr>
+    
+    <th >Jar</th>
+    <th >Battol</th>
+    <th >Pay</th>
+     <th >Jar</th>
+    <th >Battol</th>
+    <th >Jar</th>
+    <th >Battol</th>
+   
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>1</td>
-    <td>Dhaneshkumar Solanki</td>
-    <td>Shri ram wadi</td>
-    <td>Loadha hospital</td>
-    <td>7770088860<br>8793612671</td>
-    <td>5</td>
-    <td>3</td>
-    <td>250</td>
-     <td><button type='button' class='clsbtnop'><i class='fa fa-edit'></i></button></td>
-  </tr>
+ 	<tr>
+ 	<td>1</td>
+ 	<td>Dhaneshkumar Solanki</td>
+ 	<td>loadha building<br>7770088800<br>8745985698</td>
+ 	<td>5</td>
+ 	<td>3</td>
+ 	<td>80</td>
+ 	<td></td>
+ 	<td></td>
+ 		<td></td>
+ 	<td></td>
+ 	<td></td>
+ 	</tr>
   
   </tbody>
 </table> 

@@ -90,5 +90,32 @@ public class PanelController
 		} 
     }
 	
+	@RequestMapping(value = "/panel/print")
+    public String print(HttpSession session)
+	{
+		if(session.getAttribute("user")==null)
+				{
+			 		return "redirect:/login";
+				}
+		else
+		{
+			 return "panelPrint";
+		} 
+    }
+	
+	
+	@RequestMapping(value = "/panel/report")
+    public String report(HttpSession session)
+	{
+		if(session.getAttribute("user")==null)
+				{
+			 		return "redirect:/login";
+				}
+		else
+		{
+			 return "panelReport";
+		} 
+    }
+	
 	
 }

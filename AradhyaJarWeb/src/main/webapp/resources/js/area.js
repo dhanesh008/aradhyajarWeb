@@ -67,7 +67,7 @@ function loadtablewithdata()
                     "<td>" + b.areaJarRate + "</td>" +
                     "<td>" + b.areaBotRate + "</td>" +
                     "<td>" + b.areaStatus + "</td>" +
-                    " <td><button type='button' onclick='openPopup()'class='clsbtnop'><i class='fa fa-edit'></i></button></td>" +
+                    " <td><button type='button' onclick='openPopup()' class='clsbtnop'><i class='fa fa-edit'></i></button></td>" +
                     "</tr>");
                 i++;
             });
@@ -82,6 +82,9 @@ function loadtablewithdata()
 
 	function openPopup()
 	{
-		var modal = document.getElementById("myModal");
-		modal.style.display = "block";
+		$("#modalEdit").modal();
+	}
+	function closePopup()
+	{
+		$("#modalEdit").modal('hide');
 	}
