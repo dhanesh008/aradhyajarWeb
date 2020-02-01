@@ -39,7 +39,12 @@ pending int(11)
 order_deposite int(11) 
 tdate date 
 cancel smallint(1) 
-orer_details varchar(255)*/
+
+orer_details varchar(255) 
+order_jardel int(11) 
+order_jar_pick int(11) 
+order_bot_del int(11) 
+order_bot_pick int(11)*/
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -98,6 +103,19 @@ orer_details varchar(255)*/
 	@Column(name="orer_details")
 	private String orerDetails;
 
+	@Column(name="order_jardel")
+	private int orderJarDel;
+	
+	@Column(name="order_jar_pick")
+	private int orderJarPick;
+	
+	@Column(name="order_bot_del")
+	private int orderbotdel;
+	
+	@Column(name="order_bot_pick")
+	private int orderBotPick;
+	
+	
 	public int getId() {
 		return Id;
 	}
@@ -242,14 +260,50 @@ orer_details varchar(255)*/
 		this.orerDetails = orerDetails;
 	}
 
+	public int getOrderJarDel() {
+		return orderJarDel;
+	}
+
+	public void setOrderJarDel(int orderJarDel) {
+		this.orderJarDel = orderJarDel;
+	}
+
+	public int getOrderJarPick() {
+		return orderJarPick;
+	}
+
+	public void setOrderJarPick(int orderJarPick) {
+		this.orderJarPick = orderJarPick;
+	}
+
+	public int getOrderbotdel() {
+		return orderbotdel;
+	}
+
+	public void setOrderbotdel(int orderbotdel) {
+		this.orderbotdel = orderbotdel;
+	}
+
+	public int getOrderBotPick() {
+		return orderBotPick;
+	}
+
+	public void setOrderBotPick(int orderBotPick) {
+		this.orderBotPick = orderBotPick;
+	}
+
 	@Override
 	public String toString() {
 		return "OrderMasterEntity [Id=" + Id + ", orderUuid=" + orderUuid + ", customerName=" + customerName
 				+ ", address=" + address + ", mobileNo1=" + mobileNo1 + ", mobileNo2=" + mobileNo2 + ", orderDate="
 				+ orderDate + ", deposite=" + deposite + ", jarNo=" + jarNo + ", botNo=" + botNo + ", jarRate="
 				+ jarRate + ", botRate=" + botRate + ", total=" + total + ", pending=" + pending + ", orderDeposite="
-				+ orderDeposite + ", tdate=" + tdate + ", cancel=" + cancel + ", orerDetails=" + orerDetails + "]";
+				+ orderDeposite + ", tdate=" + tdate + ", cancel=" + cancel + ", orerDetails=" + orerDetails
+				+ ", orderJarDel=" + orderJarDel + ", orderJarPick=" + orderJarPick + ", orderbotdel=" + orderbotdel
+				+ ", orderBotPick=" + orderBotPick + "]";
 	}
+
+	
 	
 	
 	

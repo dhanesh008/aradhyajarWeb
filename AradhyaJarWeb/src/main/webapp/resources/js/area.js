@@ -62,12 +62,14 @@ function loadtablewithdata()
             table.empty();
             var i=1;
             $.each(data, function (a, b) {
+            	
+            	var myJSON = JSON.stringify(b); 
                 table.append("<tr><td>"+i+"</td>" +
                     "<td>"+b.areaName+"</td>"+
                     "<td>" + b.areaJarRate + "</td>" +
                     "<td>" + b.areaBotRate + "</td>" +
-                    "<td>" + b.areaStatus + "</td>" +
-                    " <td><button type='button' onclick='openPopup()' class='clsbtnop'><i class='fa fa-edit'></i></button></td>" +
+                  
+                     '<td><button type="button" onclick="openPopup(\''+b.areaUuid+'\',\''+b.areaJarRate+'\',\''+b.areaBotRate+'\',\''+b.areaName+'\')" class="clsbtnop"><i class="fa fa-edit"></i></button></td>' +
                     "</tr>");
                 i++;
             });
@@ -80,9 +82,20 @@ function loadtablewithdata()
     
 	}
 
-	function openPopup()
+	function openPopup(uuid,jr,br,an)
 	{
+		console.log(uuid);
+		var table = $("#jartable tbody");
+		   table.empty();
+		   table.append("<tr>"+
+                   "<td >"+an+"</td>"+
+                   "<td id='newjr' contentEditable='true'></td>" +
+                   "<td id='newbr' contentEditable='true'></td>" +
+                   '<td><button type="button" onclick="update(\''+$("#newjr").text()+'\',\''+$("#newbr").text()+'\',\''+uuid+'\')" class="clsbtnop"><i class="fa fa-save"></i></button></td>'+
+      
+                   "</tr>");
 		$("#modalEdit").modal();
+		
 	}
 	function closePopup()
 	{

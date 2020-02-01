@@ -70,7 +70,7 @@
     <th>Area Name</th>
     <th>Jar rate</th>
     <th>Bottel Rate</th>
-    <th>Status</th>
+   
     <th>Options</th>
   </tr>
   </thead>
@@ -99,20 +99,15 @@
     <th>Area Name</th>
     <th>Jar rate</th>
     <th>Bottel Rate</th>
+       <th>Action</th>
   </tr>
   </thead>
   <tbody>
-  <tr>
-    
-    <td>Dhaneshkumar rameshlal Solanki</td>
-    <td>Jar rate</td>
-    <td>Bottel Rate</td>
-  </tr> 
+  
   </tbody>
  
 </table> 
-  <button type="submit" onclick="addnewArea()" style="width:40%" class="clsbtn">Save</button>
-  <button type="submit" onclick="addnewArea()" style="width:40%" class="clsbtn">Close</button>
+
 </div>
 </div>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/area.js"></script>

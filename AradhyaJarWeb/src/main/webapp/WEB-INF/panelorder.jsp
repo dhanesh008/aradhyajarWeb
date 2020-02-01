@@ -58,7 +58,7 @@
       </div>
       <div class="clsform-group" style="width:15%;">
         <label><b>Time</b></label>
-        <input type="text" id="mob2" placeholder="Mobile">
+        <input type="text" id="time" placeholder="Mobile">
       </div>
            <div class="clsform-group" style="width:20%;">
         <label><b>Deposit(in Rs)</b></label>
@@ -67,25 +67,25 @@
          
           <div class="clsform-group" style="width:8%;">
         <label><b>Jar</b></label>
-        <input type="text" id="deposite"  placeholder="Jar" required autofocus> 
+        <input type="text" id="jar"  placeholder="Jar" required autofocus> 
       </div>
      
        <div class="clsform-group" style="width:9%;">
         <label><b>Jar Rate</b></label>
-        <input type="text" id="deposite"  placeholder="Jar" required autofocus> 
+        <input type="text" id="jarrate"  placeholder="Jar" required autofocus> 
       </div>
        <div class="clsform-group" style="width:10%;">
         <label><b>Bottel</b></label>
-        <input type="text" id="deposite"  placeholder="Bottel" required autofocus> 
+        <input type="text" id="bot"  placeholder="Bottel" required autofocus> 
       </div>
       
       <div class="clsform-group" style="width:10%;">
         <label><b>Bottel Rate</b></label>
-        <input type="text" id="deposite"  placeholder="Bottel" required autofocus> 
+        <input type="text" id="botrate"  placeholder="Bottel" required autofocus> 
       </div>
        <div class="clsform-group" style="width:30%;">
       <label ><b>Order Details</b></label>
-        <input type="text" id="add1" name=""placeholder="Address"  required>
+        <input type="text" id="ordedetails" name=""placeholder="Address"  required>
       </div>
       
     
@@ -99,7 +99,7 @@
         </div>
      <div class="clsModal-content">
         		  <div class="clsModal" style="border: 2px solid grey;">
-        		  	<table style="float:center;" id="areatable" width="99%">
+        		  	<table style="float:center;" id="ordertable" width="99%">
   <thead class="clsTable">
   <tr>
     <th>Sr No.</th>
@@ -117,20 +117,7 @@
   </thead>
   <tbody>
   	
-  <tr>
-    <td>1</td>
-    <td>Dhaneshkumar Solanki</td>
-    <td>shri ram wadi</td>
-    <td>01-01-2020 14:30</td>
-    <td>7770088860<br>8574968596</td>
-    <td>40 X 40</td>
-    <td>40 X 30</td>
-    <td>2800</td>
-     <td>1000</td>
-      <td>1800</td>
-        <td><button type='button' class='clsbtnop'><i class='fa fa-edit'></i></button>
-        <button type='button' class='clsbtnop'><i class='fa fa-info'></i></button></td>
-  </tr>
+  
   </tbody>
 </table> 
         		  
