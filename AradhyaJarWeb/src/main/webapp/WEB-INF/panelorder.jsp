@@ -8,6 +8,9 @@
    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/DataTables/datatables.min.css"/>
  
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/DataTables/datatables.min.js"></script>
+<!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 </head>
 <body>
 <div class="topnav">
@@ -127,8 +130,50 @@
   </div>
 </div>
 
+ <div id="orderTrans" class="modal">
+  <p>Order Transaction</p>
+  <table style="float:center;" id="ordertransaction" width="99%">
+  <thead class="clsTable">
+  
+  </thead>
+  <tbody>
+  
+  </tbody>
  
+</table> 
 
+</div>
+<div id="orderdetails" class="modal" style="max-width: 558px;">
+  <p>Order details</p>
+  <table style="float:center; " id="orderdetails">
+  <thead class="clsTable">
+  <tr>
+     <th rowspan="2">srno</th>
+      <th rowspan="2">Tdate</th>
+  <th colspan="2">PickUp</th>
+  <th colspan="2">Delivery</th>
+   <th rowspan="2">Payment</th>
+   
+  
+  </tr>
+    <tr>
+  
+  <th>Jar</th>
+  <th>Bottel</th>
+  <th>Jar</th>
+  <th>Bottel</th>
+ 
+  </tr>
+  </thead>
+  <tbody>
+  
+  </tbody>
+ 
+</table> 
+
+<button type="submit" onclick="printBill" style="width:25%; float:right" class="clsbtn">Print Bill</button>
+
+</div>
 
 
 

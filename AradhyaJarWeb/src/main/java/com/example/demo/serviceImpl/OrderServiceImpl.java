@@ -13,8 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.Entity.AreaEntity;
+import com.example.demo.Entity.OrderLogEntity;
 import com.example.demo.Entity.OrderMasterEntity;
 import com.example.demo.POJO.ResultVo;
+import com.example.demo.repo.OrderLogRepo;
 import com.example.demo.repo.OrderRepo;
 import com.example.demo.service.OrderService;
 
@@ -24,6 +26,9 @@ public class OrderServiceImpl implements OrderService
 	
 	@Autowired
 	OrderRepo orderrepo;
+	
+	@Autowired
+	OrderLogRepo orderLogreepo;
 
 	@Override
 	@Transactional
@@ -70,6 +75,51 @@ public class OrderServiceImpl implements OrderService
 		List<OrderMasterEntity> orderMasterEntities=new ArrayList<>();
 		orderMasterEntities=orderrepo.findopenorders();
 		return orderMasterEntities;
+	}
+
+	@Override
+	public ResultVo addnewtransaction(String orderuuid, int jarpick, int botpick, int jardel, int botdel, int payment) {
+		ResultVo resultVo=new ResultVo();
+			if(jarpick==0 && botpick==0 && jardel==0 && botdel==0 && payment==0)
+			{
+				resultVo.setMsg("Empty Transaction");
+				resultVo.setResult(1);
+			}
+			else
+			{
+				OrderMasterEntity orderMasterEntity=orderrepo.getOrderbyUUID(orderuuid);
+				if(orderMasterEntity==null)
+					{
+					resultVo.setMsg("Order Details Not Found");
+					resultVo.setResult(1);
+					}
+				else
+					{
+						OrderLogEntity orderLogEntity=new OrderLogEntity();
+						orderLogEntity.setOrderUuid(orderMasterEntity.getOrderUuid());
+						orderLogEntity.setJarPickup(jarpick);
+						orderLogEntity.setBotPickup(botpick);
+						orderLogEntity.setJarDelivered(jardel);
+						orderLogEntity.setBotDelivered(botdel);
+						orderLogEntity.setPayment(payment);
+							orderLogreepo.save(orderLogEntity);
+							
+						int jarcount,botcount,newpayment,total,pending;	
+						jarcount=orderMasterEntity.getJarNo();
+						botcount=orderMasterEntity.getBotNo();
+						
+						botcount=orderMasterEntity.getBotNo()+botdel;
+						
+
+					}
+			}
+		
+		return resultVo;
+	}
+
+	@Override
+	public List<OrderLogEntity> getorderloginfo(String uuid) {
+		return orderLogreepo.getallOrderLog(uuid);
 	}
 	
 

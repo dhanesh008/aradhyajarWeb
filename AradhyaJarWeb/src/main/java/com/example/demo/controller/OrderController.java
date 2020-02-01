@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.Entity.OrderLogEntity;
 import com.example.demo.Entity.OrderMasterEntity;
 import com.example.demo.POJO.AreaVO;
 import com.example.demo.POJO.ResultVo;
@@ -44,6 +45,26 @@ public class OrderController {
 			@RequestParam String orderDetails) throws ParseException 
 	{
 		return orderservice.addNewOrder(cusname,address,mobile1,mobile2,date,time,depoiste,jar,jarrate,bot,botrate,orderDetails);
-	}  
+	} 
+	
+	
+	@RequestMapping(value="order/trans",method = RequestMethod.GET)
+	public @ResponseBody ResultVo newTransa(@RequestParam String orderuuid,@RequestParam int jarpick,
+			@RequestParam int botpick,
+			@RequestParam int jardel,
+			@RequestParam int botdel,
+			@RequestParam int payment)
+	{
+		return orderservice.addnewtransaction(orderuuid,jarpick,botpick,jardel,botdel,payment);
+		
+	}
+	
+	
+	@RequestMapping(value="order/orderlog",method =RequestMethod.GET)
+	public @ResponseBody List<OrderLogEntity> orderlog(@RequestParam String uuid)
+	{
+		return orderservice.getorderloginfo(uuid);
+	}
+	
 	
 }

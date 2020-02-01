@@ -12,4 +12,7 @@ public interface OrderRepo extends JpaRepository<OrderMasterEntity, Long> {
 	@Query("SELECT u from OrderMasterEntity u WHERE u.cancel=0 ORDER BY u.tdate ASC")
 	List<OrderMasterEntity> findopenorders();
 
+	@Query("SELECT u from OrderMasterEntity u WHERE u.cancel=0 and u.orderUuid=:orderuuid")
+	OrderMasterEntity getOrderbyUUID(String orderuuid);
+
 }
