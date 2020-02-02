@@ -37,6 +37,8 @@ function loadtablewithdata()
             table.empty();
             var i=1;
             $.each(data, function (a, b) {
+            	var myJSON = JSON.stringify(b);
+            	
                 table.append("<tr><td>"+i+"</td>" +
                     "<td>"+b.custName+"</td>"+
                     "<td>" + b.areaName + "</td>" +
@@ -45,7 +47,7 @@ function loadtablewithdata()
                     "<td>" + b.deposite+"</td>" +
                     "<td>" + b.status+"</td>" +
                     
-                    " <td><button type='button' onclick='openPopUp("+b+")' class='clsbtnop'><i class='fa fa-edit'></i></button></td>" +
+                    '<td><button type="button" onclick="openPopUp(\''+myJSON+'\')" class="clsbtnop"><i class="fa fa-edit"></i></button></td>' +
                     "</tr>");
                 i++;
                 console.log((b.custtdate));
@@ -54,9 +56,6 @@ function loadtablewithdata()
         }
     });
     
-    $("#areatable").DataTable({
-    	searching:false,
-    	 "lengthChange": false});
     
 	}
 
@@ -102,3 +101,8 @@ function formateDate(today)
 	return today;
 	}
 
+function openPopUp(name)
+{
+	 var obj=JSON.parse(name);
+	console.log(obj);
+	}

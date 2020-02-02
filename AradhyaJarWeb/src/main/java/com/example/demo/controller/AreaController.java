@@ -34,4 +34,13 @@ public class AreaController {
 	{
 		return areaService.addnewArea(areaname,jarRate,botrate);
 	}
+	
+	@RequestMapping(value="/edit/area",method = RequestMethod.POST)
+	public @ResponseBody ResultVo updateAreaDetails(@RequestParam String areauuid,@RequestParam int jarRate,@RequestParam int botrate)
+	{
+		return areaService.updateAreaDetails(areauuid,jarRate,botrate);
+	}
+	
+	
+	
 }

@@ -15,4 +15,11 @@ public interface CustomerRepo extends JpaRepository<CustomerEntity, Long> {
 	@Query("SELECT U FROM CustomerEntity U ORDER BY U.custtdate DESC")
 	List<CustomerEntity> getCustomerList();
 
+	@Query("SELECT U FROM CustomerEntity U WHERE U.areaUuid=:areauuid ORDER BY U.custtdate DESC")
+	List<CustomerEntity> findbyAreaUuid(String areauuid);
+
+	@Query("SELECT U FROM CustomerEntity U WHERE U.custUuid=:cusuuid")
+	CustomerEntity findbyCusUuid(String cusuuid);
+
+	
 }

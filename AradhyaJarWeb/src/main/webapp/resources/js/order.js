@@ -112,7 +112,7 @@ function transactionModel(uuid)
     "<td id='botdel' contentEditable='true'>0</td>"+
     "<td  id='pay' contentEditable='true'>0</td>"+
     '<td><button type="button" onclick="updateorder(\''+uuid+'\')" class="clsbtnop"><i class="fa fa-save"></i></button>'+
-    "</tr>")
+    "</tr>");
 	   
 	$("#orderTrans").modal();
 	}
@@ -211,3 +211,6 @@ function detailsModel(uuid)
 	console.log(uuid);
 	}
 
+function createPDF() {
+  
+}

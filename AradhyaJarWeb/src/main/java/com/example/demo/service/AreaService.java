@@ -11,4 +11,6 @@ public interface AreaService {
 
 	ResultVo addnewArea(String areaname, int jarRate, int botrate);
 
+	ResultVo updateAreaDetails(String areauuid, int jarRate, int botrate);
+
 }

@@ -17,4 +17,7 @@ public interface AraeRepo extends JpaRepository<AreaEntity, Long>
 	@Query("SELECT U FROM AreaEntity U ORDER BY U.areaName,U.areaTdate DESC")
 	List<AreaEntity> getAreaListbyorder();
 
+	@Query("SELECT U FROM AreaEntity U WHERE U.areaUuid=:areauuid")
+	AreaEntity getAreabyUuid(String areauuid);
+
 }

@@ -89,9 +89,9 @@ function loadtablewithdata()
 		   table.empty();
 		   table.append("<tr>"+
                    "<td >"+an+"</td>"+
-                   "<td id='newjr' contentEditable='true'></td>" +
-                   "<td id='newbr' contentEditable='true'></td>" +
-                   '<td><button type="button" onclick="update(\''+$("#newjr").text()+'\',\''+$("#newbr").text()+'\',\''+uuid+'\')" class="clsbtnop"><i class="fa fa-save"></i></button></td>'+
+                   "<td id='newjr' contentEditable='true'>"+jr+"</td>" +
+                   "<td id='newbr' contentEditable='true'>"+br+"</td>" +
+                   '<td><button type="button" onclick="update(\''+uuid+'\')" class="clsbtnop"><i class="fa fa-save"></i></button></td>'+
       
                    "</tr>");
 		$("#modalEdit").modal();
@@ -101,3 +101,40 @@ function loadtablewithdata()
 	{
 		$("#modalEdit").modal('hide');
 	}
+function update(uuid)
+	{
+		console.log($("#newjr").text());
+		console.log($("#newbr").text());
+		if($("#newjr").text()==null || $("#newjr").text()=='' || $("#newbr").text()==null || $("#newbr").text()=='')
+				{
+						alert("Empty Fiels");
+				}
+		else
+				{
+			$.ajax({
+				  type: "POST",
+				  url: contextPath+"/edit/area",
+				  cache: false,
+				  data:{
+					  "areauuid":uuid,
+					  "jarRate":$("#newjr").text(),
+					  "botrate":$("#newbr").text()
+				  },
+				  success: function(data)
+				  {
+				    if(data.result==1)
+				    	{
+				    	alert(data.msg);
+				    	}
+				    else
+				    	{
+				    	//new PopUp Add
+				    	alert(data.msg);
+				    	}
+				    loadtablewithdata();
+				  }
+				});
+				}
+		
+	}
+	

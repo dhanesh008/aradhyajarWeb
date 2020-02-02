@@ -58,6 +58,35 @@ public class AreaServiceImpl implements AreaService
 		}
 		return resultVo;
 	}
+
+	@Override
+	public ResultVo updateAreaDetails(String areauuid, int jarRate, int botrate) 
+	{
+		ResultVo resultVo=new ResultVo();
+			AreaEntity areaEntity=areRepo.getAreabyUuid(areauuid);
+			if(areaEntity==null)
+			{
+				resultVo.setMsg("Area Details Not Found");
+				resultVo.setResult(1);
+			}
+			else
+			{
+				areaEntity.setAreaJarRate(jarRate);
+				areaEntity.setAreaBotRate(botrate);
+				if(areRepo.save(areaEntity)==null)
+					{
+					resultVo.setMsg("Failed To Save Details");
+					resultVo.setResult(1);
+					}
+				else
+				{
+					resultVo.setMsg("Area Details Updated Successffuly");
+					resultVo.setResult(0);
+				}
+			}
+		
+		return resultVo;
+	}
 	
 
 }
