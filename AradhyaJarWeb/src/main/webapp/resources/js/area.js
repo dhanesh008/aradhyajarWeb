@@ -131,7 +131,7 @@ function update(uuid)
 				    	//new PopUp Add
 				    	alert(data.msg);
 				    	}
-				    loadtablewithdata();
+				    
 				  }
 				});
 				}

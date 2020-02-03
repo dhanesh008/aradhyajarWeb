@@ -48,7 +48,7 @@ cancel int(11)
 	@Column(name="transaction_uuid")
 	private String transactionUuid=UUID.randomUUID().toString();
 	
-	@Column(name="transaction_cusUuid")
+	@Column(name="transaction_cus_uuid")
 	private String transactionCusUuid;
 	
 	@Column(name="transaction_cust_name")

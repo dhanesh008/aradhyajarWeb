@@ -38,11 +38,11 @@ $(window).on('load', function()
         
 } );
 
-function updateTransaction(cusuuid,uuid)
+function updateTransaction(uuid)
 	{
 	var tablehead=$("#custrans thead");
 	tablehead.empty();
-		tablehead.append("<tr><th colspan='6'>Dhaneshkumar Solanki</th></tr><tr><th colspan='2'>Delivery</th><th colspan='2'>PickUp</th><th>Payment</th><th rowspan='2'>Action</th></tr><tr><th>Jar</th><th>Bottel</th><th>Jar</th><th>Bottel</th><th>Payment</th></tr>")
+		tablehead.append("<tr><th colspan='6'>Dhaneshkumar Solanki</th></tr><tr><th colspan='2'>PickUp</th><th colspan='2'>Delivery</th><th>Payment</th><th rowspan='2'>Action</th></tr><tr><th>Jar</th><th>Bottel</th><th>Jar</th><th>Bottel</th><th>Payment</th></tr>")
 	
 	var table = $("#custrans tbody");
 		table.empty();
@@ -53,7 +53,7 @@ function updateTransaction(cusuuid,uuid)
     "<td id='jardel' contentEditable='true'>0</td>"+
     "<td id='botdel' contentEditable='true'>0</td>"+
     "<td  id='pay' contentEditable='true'>0</td>"+
-    '<td><button type="button" onclick="newTransaction(\''+cusuuid+'\')" class="clsbtnop"><i class="fa fa-save"></i></button>'+
+    '<td><button type="button" onclick="newTransaction(\''+uuid+'\')" class="clsbtnop"><i class="fa fa-save"></i></button>'+
     "</tr>");
 	$("#cusTrans").modal();
 	}
@@ -92,21 +92,12 @@ function newTransaction(uuid)
 							  "botpick":$("#botpick").text(),
 							  "jardel":$("#jardel").text(),
 							  "botdel":$("#botdel").text(),
-							  "payment":$("#pay").text()
+							  "amount":$("#pay").text()
 						  },
 						  success: function(data)
 						  {
-						    if(data.result==0)
-						    	{
-						    	
-						    	$("#orderTrans").hide();
-						    	}
-						    else
-						    	{
-						    	//new PopUp Add
-						    	alert(data.msg);
-						    	}
-						    loadtablewithdata();
+						    console.log(data);
+						    
 						  }
 						});
 					}
@@ -119,14 +110,16 @@ function loadtablewithdata(areauuid)
 		console.log(areauuid);
 		
 		var table = $("#custlisttable tbody");
-		table.empty();
+		
 		 $.ajax({
 		    	url: contextPath + "/list/custlist",
 		        method: "GET",
 		       data:{
 		    	   "areauuid":areauuid
 		       },
-		        success: function (data) {
+		        success: function (data) 
+		        {
+		        	table.empty();
 		        	console.log(data);
 		           if(data.length==0)
 		        	   	{
@@ -136,7 +129,7 @@ function loadtablewithdata(areauuid)
 		        	   {
 			            var i=1;
 			            $.each(data, function (a, b) {
-			            	var myJSON = JSON.stringify(b);
+			            
 			            	
 			                table.append("<tr><td>"+i+"</td>" +
 			                    "<td>"+b.cusname+"</td>"+
@@ -147,7 +140,7 @@ function loadtablewithdata(areauuid)
 			                    "<td>" + b.bot+"</td>" +
 			                    "<td>" + b.amount+"</td>" +
 			                    
-			                    '<td><button type="button" onclick="updateTransaction(\''+b.acc_uuid+'\')" class="clsbtnop"><i class="fa fa-edit"></i></button></td>' +
+			                    '<td><button type="button" onclick="updateTransaction(\''+b.cusuuid+'\')" class="clsbtnop"><i class="fa fa-edit"></i></button></td>' +
 			                    "</tr>");
 			                i++;
 			                console.log((b.custtdate));
