@@ -67,7 +67,7 @@ function addnewCustomer()
 				$("#mob2").val()==null || $("#mob2").val()=='' || $("#deposite").val()==null || $("#deposite").val()==''
 				)
 			{
-				alert("Empty Fields");
+				alertify.error('All fields are empty');
 			}
 		else
 			{
@@ -88,8 +88,11 @@ function addnewCustomer()
 				  },
 				  success: function(data)
 				  {
-					 alert(data.msg);
+					  alertify.success(data.nsg);
+					  loadtablewithdata();
+					  $(":input").val('');
 				  }
+				  
 			});
 				  
 			

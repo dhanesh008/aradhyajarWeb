@@ -6,8 +6,11 @@
     
    <script src="${pageContext.request.contextPath}/resources/js/lib/jquery.min.js"></script>
    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/DataTables/datatables.min.css"/>
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/js/lib/css/alertify.css" /> 
  
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/DataTables/datatables.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/lib/alertify.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/lib/alertify.min.js"></script>
 </head>
 <body>
 <div class="topnav">
@@ -50,24 +53,24 @@
      					 </div>
      					 <div class="clsform-group" style="width:35%;">
       <label ><b>Address</b></label>
-        <input type="text" id="add1" name=""placeholder="Address"  required>
+        <input type="text" id="add1" name=""placeholder="Address"  >
       </div>
       <div class="clsform-group"  style="width:18%;">
         <label><b>Mobile 1</b></label>
-        <input type="text" id="mob1" placeholder="Mobile"  required>
+        <input type="number" id="mob1" placeholder="Mobile"  >
       </div>
       <div class="clsform-group" style="width:18%;">
         <label><b>Mobile 2</b></label>
-        <input type="text" id="mob2" placeholder="Mobile">
+        <input type="number" id="mob2" placeholder="Mobile" >
       </div>
          <div class="clsform-group" style="width:18%;">
         <label><b>Address 2</b></label>
-        <input type="text" id="add2" placeholder="Deposit" required autofocus>
+        <input type="text" id="add2" placeholder="Address"  >
       </div>
       
       <div class="clsform-group" style="width:18%;">
         <label><b>Deposit(in Rs)</b></label>
-        <input type="text" id="deposite"  placeholder="Deposit" required autofocus>
+        <input type="number" id="deposite"  placeholder="Deposit"  >
       </div>
         		  
         		  	 <div class="clsform-group" style="width:18%;">

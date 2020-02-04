@@ -10,13 +10,13 @@ function addnewArea()
 	console.log($("#abotrate").val());
 	if($("#areaname").val()==null || $("#areaname").val()=='' || $("#ajarrate").val()=='' || $("#abotrate").val()==null || $("#abotrate").val()=='')
 		{
-			alert("Empty fields");
+			alertify.error('All fields are empty');
 		}
 	else
 		{
 			if(isNaN($("#ajarrate").val())  && isNaN($("#abotrate").val()) )
 				{
-				alert("iNVALID rATE fields");
+					alert("iNVALID rATE fields");
 				}
 			else
 				{
@@ -91,18 +91,21 @@ function loadtablewithdata()
                    "<td >"+an+"</td>"+
                    "<td id='newjr' contentEditable='true'>"+jr+"</td>" +
                    "<td id='newbr' contentEditable='true'>"+br+"</td>" +
-                   '<td><button type="button" onclick="update(\''+uuid+'\')" class="clsbtnop"><i class="fa fa-save"></i></button></td>'+
+                   '<td><button rel="modal:close" type="button" onclick="update(\''+uuid+'\')" class="clsbtnop"><i class="fa fa-save"></i></button></td>'+
       
                    "</tr>");
+		   
 		$("#modalEdit").modal();
 		
 	}
 	function closePopup()
 	{
-		$("#modalEdit").modal('hide');
+		$.modal.close();
+	
 	}
 function update(uuid)
 	{
+	
 		console.log($("#newjr").text());
 		console.log($("#newbr").text());
 		if($("#newjr").text()==null || $("#newjr").text()=='' || $("#newbr").text()==null || $("#newbr").text()=='')
@@ -130,6 +133,8 @@ function update(uuid)
 				    	{
 				    	//new PopUp Add
 				    	alert(data.msg);
+				    	$(":input").val('');
+				    	 closePopup();
 				    	}
 				    
 				  }

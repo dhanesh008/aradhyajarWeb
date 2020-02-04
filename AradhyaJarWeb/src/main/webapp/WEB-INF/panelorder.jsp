@@ -40,11 +40,11 @@
         		  <div class="clsModal" style="border: 2px solid grey;">
         		  
         		  
-      <div class="clsform-group" style="width:45%;">
+      <div class="clsform-group" style="width:35%;">
       <label for="uname"><b>Customer Name</b></label>
        	<input id="cusname" type="text" placeholder="Customer Name">
      					 </div>
-     					 <div class="clsform-group" style="width:45%;">
+     					 <div class="clsform-group" style="width:35%;">
       <label ><b>Address</b></label>
         <input type="text" id="add1" name=""placeholder="Address"  required>
       </div>
