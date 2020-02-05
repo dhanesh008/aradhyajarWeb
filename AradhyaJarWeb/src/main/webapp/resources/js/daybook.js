@@ -10,7 +10,14 @@ function loadtablewithdata()
     	url: contextPath + "/day/tranlist",
         method: "GET",
        
-        success: function (data) {
+        success: function (data) 
+        {
+        	if(data.length==0)
+        		{
+        			loadEmptyTable
+        		}
+        	else
+        		{
         	console.log(data);
             table.empty();
             var i=1;
@@ -34,8 +41,16 @@ function loadtablewithdata()
                 i++;
             });
             
- 
+        		}
             
         }
     });
 	}
+
+function loadEmptyTable()
+{
+	
+var table = $("#daytrantable tbody");
+table.empty();
+table.append("<tr><td colspan='11'>Not Records Available</td></tr>");
+}

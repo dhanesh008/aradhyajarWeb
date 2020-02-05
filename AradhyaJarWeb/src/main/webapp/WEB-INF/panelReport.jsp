@@ -8,6 +8,8 @@
    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/DataTables/datatables.min.css"/>
  
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/DataTables/datatables.min.js"></script>
+  <script src="${pageContext.request.contextPath}/resources/js/lib/jspdf.min.js"></script>
+  <script src="${pageContext.request.contextPath}/resources/js/lib/jspdf.plugin.autotable.min.js"></script>
 </head>
 
 <body>
@@ -44,13 +46,24 @@
           <option value="">Select Area</option>
           </select>
      				 </div>
+     				<div id="printreport" class="clsform-group" style=" width:25%;">
+     					
+      							  <button type="submit" onclick="printdata()" class="clsbtn">print</button>
+     					 </div>	 
      				 
         		  </div>
         		  
         </div>
          	
      <div class="clsModal-content">
+     
+     
+     
         		  <div class="clsModal" style="border: 2px solid grey;">
+        		  	  
+        		  	
+        		  
+        		  
         		  	<table style="float:center;" id="printtable" width="99%">
   <thead class="clsTable">
  <tr>
@@ -81,7 +94,8 @@
   
   </tbody>
 </table> 
-        		  
+        	
+        	  
         </div>
 
    

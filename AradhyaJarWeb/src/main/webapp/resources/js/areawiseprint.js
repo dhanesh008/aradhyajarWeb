@@ -41,6 +41,7 @@ $(window).on('load', function()
 
 function loadtablewithdata(areauuid)
 	{
+	$("#printreport").show();
 	var table = $("#printtable tbody");
 	
 	 $.ajax({
@@ -79,7 +80,6 @@ function loadtablewithdata(areauuid)
 		                    '<td></td>' +
 		                    "</tr>");
 		                i++;
-		                console.log((b.custtdate));
 		            });
 	        	   }
 
@@ -90,9 +90,22 @@ function loadtablewithdata(areauuid)
 
 function loadEmptyTable()
 {
+	$("#printreport").hide();
 var table = $("#printtable tbody");
 table.empty();
 table.append("<tr><td colspan='11'>Not Records Available</td></tr>");
+}
+
+function printdata()
+{
+	   const doc = new jsPDF();
+	   doc.setFontSize(12);
+	   doc.setFontStyle('bold');
+	   doc.text(80,10,'Area Wise Report');
+	  
+	    doc.autoTable({html: '#printtable'});
+	   doc.output('dataurlnewwindow');
+	   // window.open(doc.save('table.pdf'), '_blank');
 }
 
 
