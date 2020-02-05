@@ -9,6 +9,10 @@
    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/js/lib/css/alertify.css" /> 
  
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/DataTables/datatables.min.js"></script>
+<!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<!--ALertify  -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/lib/alertify.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/lib/alertify.min.js"></script>
 </head>
@@ -110,7 +114,26 @@
 
 
 
+<div id="editcustomer" class="modal">
+  <p>Edit Customer Details</p>
+  <table style="float:center;" id="custdetails" width="99%">
+  <thead class="clsTable">
+  <tr>
+    
+    <th>Name</th>
+    <th>Address</th>
+    <th>Mobile No 1</th>
+       <th>Mobile No 2</th>
+         <th>Option</th>
+  </tr>
+  </thead>
+  <tbody>
+  
+  </tbody>
+ 
+</table> 
 
+</div>
 
 </body>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/customer.js"></script>

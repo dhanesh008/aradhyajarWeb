@@ -44,15 +44,15 @@
         		  <div class="clsModal" style="border: 2px solid grey;">
         		  	 <div class="clsform-group" style="width:35%;">
       							  <label for="uname"><b>Area Name</b></label>
-       								 <input id="areaname" type="text" placeholder="Area">
+       								 <input id="areaname" type="text" placeholder="Area Name">
      					 </div>
      					 <div class="clsform-group" style="width:15%;">
       							  <label for="uname"><b>Jar Rate</b></label>
-       								 <input id="ajarrate" type="number" placeholder="Area">
+       								 <input id="ajarrate" type="number" placeholder="Jar Rate ">
      					 </div>
      					 	 <div class="clsform-group" style="width:15%;">
       							  <label for="uname"><b>Bottel Rate</b></label>
-       								 <input id="abotrate" type="number" placeholder="Area">
+       								 <input id="abotrate" type="number" placeholder="Bottel Rate">
      					 </div>
      					 <div class="clsform-group" style="width:15%;">
      					   <label for="uname"><b>&nbsp;</b></label>

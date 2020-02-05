@@ -43,4 +43,5 @@ public class CustomerController {
 		return customerService.addnewCustomer(areaname, areaUuid, cusname, address1, address2, mobile1, mobile2, deposite);
 	}
 	
+	
 }

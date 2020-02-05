@@ -16,7 +16,7 @@ function addnewArea()
 		{
 			if(isNaN($("#ajarrate").val())  && isNaN($("#abotrate").val()) )
 				{
-					alert("iNVALID rATE fields");
+				alertify.error('Invalid Jar Rate');
 				}
 			else
 				{
@@ -33,12 +33,12 @@ function addnewArea()
 					  {
 					    if(data.result==1)
 					    	{
-					    	alert(data.msg);
+					    	alertify.error(data.msg);
 					    	}
 					    else
 					    	{
 					    	//new PopUp Add
-					    	alert(data.msg);
+					    	alertify.success(data.msg);
 					    	}
 					    loadtablewithdata();
 					  }
@@ -110,7 +110,7 @@ function update(uuid)
 		console.log($("#newbr").text());
 		if($("#newjr").text()==null || $("#newjr").text()=='' || $("#newbr").text()==null || $("#newbr").text()=='')
 				{
-						alert("Empty Fiels");
+			alertify.error("Please Enter All Details");
 				}
 		else
 				{
@@ -127,14 +127,14 @@ function update(uuid)
 				  {
 				    if(data.result==1)
 				    	{
-				    	alert(data.msg);
+				    		alertify.error(data.msg);
 				    	}
 				    else
 				    	{
-				    	//new PopUp Add
-				    	alert(data.msg);
+				    		closePopup();
+				    		alertify.success(data.msg);
 				    	$(":input").val('');
-				    	 closePopup();
+				    	
 				    	}
 				    
 				  }

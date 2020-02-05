@@ -47,7 +47,7 @@ function loadtablewithdata()
                     "<td>" + b.deposite+"</td>" +
                     "<td>" + b.status+"</td>" +
                     
-                    '<td><button type="button" onclick="openPopUp(\''+myJSON+'\')" class="clsbtnop"><i class="fa fa-edit"></i></button></td>' +
+                    '<td><button type="button" onclick="openPopUp(\''+b.custName+'\',\''+b.custName+'\',\''+b.custAddress1+'\',\''+b.mobileNo1+'\',\''+b.mobileNo2+'\')" class="clsbtnop"><i class="fa fa-edit"></i></button></td>' +
                     "</tr>");
                 i++;
                 console.log((b.custtdate));
@@ -104,8 +104,18 @@ function formateDate(today)
 	return today;
 	}
 
-function openPopUp(name)
+function openPopUp(uuid,name,cadd,cmo1,cmo2)
 {
-	 var obj=JSON.parse(name);
-	console.log(obj);
+	var table = $("#custdetails tbody");
+	   table.empty();
+	   table.append("<tr>"+
+            "<td id='newcname' contentEditable='true'>"+name+"</td>"+
+            "<td id='newcadd' contentEditable='true'>"+cadd+"</td>" +
+            "<td id='newmob1' contentEditable='true'>"+cmo1+"</td>" +
+            "<td id='newmob2' contentEditable='true'>"+cmo2+"</td>" +
+            '<td><button rel="modal:close" type="button" onclick="update(\''+uuid+'\')" class="clsbtnop"><i class="fa fa-save"></i></button></td>'+
+
+            "</tr>");
+	$("#editcustomer").modal();
+	console.log(uuid);
 	}

@@ -46,11 +46,9 @@
       </div>
       
        <div class="clsform-group" style="width:35%;">
-		<label for=""><b>Select Customer</b></label>
-        
-          <select class="form-control" id="arealist">
-          <option value="">Select Customer</option>
-          </select>
+	<label for=""><b>&nbsp;</b></label>
+        <input id="areaname" type="text" placeholder="Search Customer">
+       
        
       </div>
      

@@ -59,7 +59,7 @@ function addnewCustomer()
 				$("#botrate").val()=='' ||  $("#botrate").val()==null ||
 				$("#ordedetails").val()=='' ||  $("#ordedetails").val()==null)
 			{
-				alert("Empty Fields");
+				alertify.error("All Fields Are Empty");
 			}
 		else
 			{
@@ -86,12 +86,23 @@ function addnewCustomer()
 						  },
 						  success: function(data)
 						  {
-							  console.log(data);
+							  if(data.result==0)
+						    	{
+						    		alertify.error(data.msg);
+						    	}
+						    else
+						    	{
+						    		closePopup();
+						    		loadtablewithdata();
+						    		alertify.success(data.msg);
+						    		$(":input").val('');
+						    	
+						    	}
 						  }});
 						}
 				else
 					{
-					alert("Invalid Mobile No");
+					alertify.error("Invalid Mobile No");
 					}
 			}
 	
@@ -127,7 +138,7 @@ function updateorder(uuid)
 				$("#botdel").text()==null || $("#botdel").text()=='' ||
 				$("#pay").text()==null || $("#pay").text()=='')
 			{
-			alert("Empty values");
+			alertify.error("All Fields Are Empty");
 			}
 		else
 			{ 
@@ -137,7 +148,7 @@ function updateorder(uuid)
 					($("#botdel").text() || $("#botdel").text())==0 &&
 				($("#pay").text() || $("#pay").text())==0)
 					{
-				alert("All Values are 0");
+						alertify.error("All Values are Zero");
 					}
 			else
 				{
@@ -157,15 +168,17 @@ function updateorder(uuid)
 					  {
 					    if(data.result==0)
 					    	{
-					    	
-					    	$("#orderTrans").hide();
+					    	alertify.success(data.msg);
+					    	closePopup();
+					    	 loadtablewithdata();
 					    	}
 					    else
 					    	{
 					    	//new PopUp Add
 					    	alert(data.msg);
+					    	alertify.error(data.msg);
 					    	}
-					    loadtablewithdata();
+					   
 					  }
 					});
 				}
@@ -184,8 +197,16 @@ function detailsModel(uuid)
        data:{
     	   "uuid":uuid
        },
-        success: function (data) {
-        	console.log(data);
+        success: function (data) 
+        {
+        	 if(data.length==0)
+        			{
+        			table.append("<tr><td colspan='7'>No Records found</td></tr>");
+        			}
+        		else
+        			{
+        				
+        			
 
             var i=1;
             $.each(data, function (a, b) {
@@ -202,15 +223,17 @@ function detailsModel(uuid)
                     "</tr>");
                 i++;
             });
-            
- 
-            
+        			}           
         }
     });
 	$("#orderdetails").modal();
-	console.log(uuid);
 	}
 
 function createPDF() {
   
+}
+function closePopup()
+{
+	$.modal.close();
+
 }
