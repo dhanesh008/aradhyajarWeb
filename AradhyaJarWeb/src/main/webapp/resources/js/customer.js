@@ -71,29 +71,48 @@ function addnewCustomer()
 			}
 		else
 			{
-			$.ajax({
-				  type: "POST",
-				  url: contextPath+"/add/newCustomer",
-				  cache: false,
-				  data:{
-					  "areaname":$("#arealist option:selected").text(),
-					  "areaUuid":$("#arealist").val(),
-					  "cusname":$("#cusname").val(),
-					  "address1":$("#add1").val(),
-					  "address2":$("#add2").val(),
-					  "mobile1":$("#mob1").val(),
-					  "mobile2":$("#mob2").val(),
-					  "deposite":$("#deposite").val(),
-					  
-				  },
-				  success: function(data)
-				  {
-					  alertify.success(data.nsg);
-					  loadtablewithdata();
-					  $(":input").val('');
-				  }
-				  
-			});
+			console.log($("#mob2").val().length)
+				console.log($("#mob1").val().length)
+					if(	$("#mob2").val().length==10 && 	$("#mob1").val().length==10)
+						{
+						$.ajax({
+							  type: "POST",
+							  url: contextPath+"/add/newCustomer",
+							  cache: false,
+							  data:{
+								  "areaname":$("#arealist option:selected").text(),
+								  "areaUuid":$("#arealist").val(),
+								  "cusname":$("#cusname").val(),
+								  "address1":$("#add1").val(),
+								  "address2":$("#add2").val(),
+								  "mobile1":$("#mob1").val(),
+								  "mobile2":$("#mob2").val(),
+								  "deposite":$("#deposite").val(),
+								  
+							  },
+							  success: function(data)
+							  {
+								  if(data.result==0)
+									  {
+									  alertify.success(data.msg);
+									  loadtablewithdata();
+									  $(":input").val('');
+									  }
+								  else
+									  {
+									  alertify.error(data.msg);
+									  }
+								 
+							  }
+							  
+						});
+						}
+					else
+						{
+							alertify.error('Invalid Mobile No');	
+						}
+			
+		
 				  
 			
 	}
