@@ -44,4 +44,12 @@ public class CustomerController {
 	}
 	
 	
+	@RequestMapping(value="/edit/customer",method = RequestMethod.POST)
+	public @ResponseBody ResultVo updateAreaDetails(@RequestParam String cusuuid,@RequestParam String cusname,@RequestParam String cusadd,@RequestParam Long cusmob1,
+			@RequestParam Long cusmob2)
+	{
+		return customerService.updateCustomerDetails(cusuuid,cusname,cusadd,cusmob1,cusmob2);
+	}
+	
+	
 }

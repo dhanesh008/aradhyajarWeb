@@ -96,4 +96,10 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerEntities;
 	}
 
+	@Override
+	public ResultVo updateCustomerDetails(String cusuuid, String cusname, String cusadd, Long cusmob1, Long cusmob2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

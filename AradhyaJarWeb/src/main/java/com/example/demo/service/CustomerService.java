@@ -14,6 +14,8 @@ public interface CustomerService
 			Long mobileNo1, Long mobileNo2, Integer  deposite);
 
 	List<CustomerEntity> getAllCustomer();
+
+	ResultVo updateCustomerDetails(String cusuuid, String cusname, String cusadd, Long cusmob1, Long cusmob2);
 	
 
 }
