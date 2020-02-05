@@ -98,8 +98,33 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public ResultVo updateCustomerDetails(String cusuuid, String cusname, String cusadd, Long cusmob1, Long cusmob2) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		ResultVo resultVo=new ResultVo();
+		CustomerEntity customerEntity=customerRepo.findbyCusUuid(cusuuid);
+		if(customerEntity==null)
+		{
+			resultVo.setMsg("Customer Details Not Found");
+			resultVo.setResult(1);
+		}
+		else
+		{
+			customerEntity.setCustName(cusname);
+			customerEntity.setCustAddress1(cusadd);
+			customerEntity.setMobileNo1(cusmob1);
+			customerEntity.setMobileNo2(cusmob2);
+			if(customerRepo.save(customerEntity)==null)
+				{
+				resultVo.setMsg("Failed To Save Details");
+				resultVo.setResult(1);
+				}
+			else
+			{
+				resultVo.setMsg("Customer Details Updated Successffuly");
+				resultVo.setResult(0);
+			}
+		}
+	
+	return resultVo;
 	}
 
 }

@@ -21,5 +21,7 @@ public interface CustomerRepo extends JpaRepository<CustomerEntity, Long> {
 	@Query("SELECT U FROM CustomerEntity U WHERE U.custUuid=:cusuuid")
 	CustomerEntity findbyCusUuid(String cusuuid);
 
+
+
 	
 }
