@@ -136,5 +136,56 @@ function openPopUp(uuid,name,cadd,cmo1,cmo2)
 
             "</tr>");
 	$("#editcustomer").modal();
-	console.log(uuid);
 	}
+
+function update(uuid)
+	{
+	if($("#newcname").text()==null || $("#newcname").text()=='' ||
+			$("#newcadd").text()==null || $("#newcadd").text()=='' || $("#newmob1").text()==null || $("#newmob1").text()=='' || $("#newmob2").text()==null || $("#newmob2").text()=='')
+	{
+			alertify.error("Please Enter All Details");
+	}
+else
+	{
+	
+	if(	$("#mob2").val().length==10 && 	$("#mob1").val().length==10)
+		{
+		$.ajax({
+			  type: "POST",
+			  url: contextPath+"/edit/customer",
+			  cache: false,
+			  data:{
+				  "cusuuid":uuid,
+				  "cusname":$("#newjr").text(),
+				  "cusadd":$("#newbr").text(),
+				  "cusmob1":$("#newjr").text(),
+				  "cusmob2":$("#newbr").text()
+			  },
+			  success: function(data)
+			  {
+			    if(data.result==1)
+			    	{
+			    		alertify.error(data.msg);
+			    	}
+			    else
+			    	{
+			    		closePopup();
+			    		alertify.success(data.msg);
+			    	$(":input").val('');
+			    	
+			    	}
+			    
+			  }
+			});
+		}
+	else
+		{
+			alertify.error('Invalid Mobile No');	
+		}
+	
+	
+	
+
+	}
+	}
+
