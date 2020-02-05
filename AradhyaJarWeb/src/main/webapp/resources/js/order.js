@@ -1,5 +1,17 @@
 
-$(window).on('load', function() {
+$(window).on('load', function() 
+		{
+	 $( "#date" ).datepicker();
+
+
+	 $('#time').timepicker({
+	     timeFormat: 'h:mm p',
+	     dynamic: false,
+	     dropdown: true,
+	     scrollbar: true
+	 });
+
+
 	loadtablewithdata();
 });
 function loadtablewithdata()
