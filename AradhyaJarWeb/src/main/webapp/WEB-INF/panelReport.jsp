@@ -9,47 +9,7 @@
  
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/DataTables/datatables.min.js"></script>
 </head>
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 35%; /* Full width */
-  height: 25%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-</style>
 <body>
 
 <div class="topnav">
@@ -91,7 +51,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
          	
      <div class="clsModal-content">
         		  <div class="clsModal" style="border: 2px solid grey;">
-        		  	<table style="float:center;" id="areatable" width="99%">
+        		  	<table style="float:center;" id="printtable" width="99%">
   <thead class="clsTable">
  <tr>
     <th rowspan="2">Sr No.</th>
@@ -117,19 +77,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   </tr>
   </thead>
   <tbody>
- 	<tr>
- 	<td>1</td>
- 	<td>Dhaneshkumar Solanki</td>
- 	<td>loadha building<br>7770088800<br>8745985698</td>
- 	<td>5</td>
- 	<td>3</td>
- 	<td>80</td>
- 	<td></td>
- 	<td></td>
- 		<td></td>
- 	<td></td>
- 	<td></td>
- 	</tr>
+ 	
   
   </tbody>
 </table> 
@@ -143,16 +91,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 
 </body>
-<div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
-
-</div>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/transaction.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/areawiseprint.js"></script>
 <script>
 var contextPath="${pageContext.request.contextPath}";
 </script>

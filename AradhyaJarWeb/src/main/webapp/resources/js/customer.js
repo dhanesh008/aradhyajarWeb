@@ -47,7 +47,7 @@ function loadtablewithdata()
                     "<td>" + b.deposite+"</td>" +
                     "<td>" + b.status+"</td>" +
                     
-                    '<td><button type="button" onclick="openPopUp(\''+b.custName+'\',\''+b.custName+'\',\''+b.custAddress1+'\',\''+b.mobileNo1+'\',\''+b.mobileNo2+'\')" class="clsbtnop"><i class="fa fa-edit"></i></button></td>' +
+                    '<td><button type="button" onclick="openPopUp(\''+b.custUuid+'\',\''+b.custName+'\',\''+b.custAddress1+'\',\''+b.mobileNo1+'\',\''+b.mobileNo2+'\')" class="clsbtnop"><i class="fa fa-edit"></i></button></td>' +
                     "</tr>");
                 i++;
                 console.log((b.custtdate));
@@ -156,10 +156,10 @@ else
 			  cache: false,
 			  data:{
 				  "cusuuid":uuid,
-				  "cusname":$("#newjr").text(),
-				  "cusadd":$("#newbr").text(),
-				  "cusmob1":$("#newjr").text(),
-				  "cusmob2":$("#newbr").text()
+				  "cusname":$("#newcname").text(),
+				  "cusadd":$("#newcadd").text(),
+				  "cusmob1":$("#newmob1").text(),
+				  "cusmob2":$("#newmob2").text()
 			  },
 			  success: function(data)
 			  {
@@ -169,7 +169,9 @@ else
 			    	}
 			    else
 			    	{
+			    	
 			    		closePopup();
+			    		loadtablewithdata();
 			    		alertify.success(data.msg);
 			    	$(":input").val('');
 			    	
@@ -188,4 +190,8 @@ else
 
 	}
 	}
+function closePopup()
+{
+	$.modal.close();
 
+}
