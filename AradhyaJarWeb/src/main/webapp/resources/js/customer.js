@@ -148,7 +148,7 @@ function update(uuid)
 else
 	{
 	
-	if(	$("#mob2").val().length==10 && 	$("#mob1").val().length==10)
+	if(	$("#newmob1").text().length==10 && 	$("#newmob2").text().length==10)
 		{
 		$.ajax({
 			  type: "POST",
